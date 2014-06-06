@@ -21,6 +21,7 @@
 		8C6A43B11941630400D7D80E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C6A43931941630400D7D80E /* UIKit.framework */; };
 		8C6A43B91941630400D7D80E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C6A43B71941630400D7D80E /* InfoPlist.strings */; };
 		8C6A43BB1941630400D7D80E /* QuartzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A43BA1941630400D7D80E /* QuartzTests.m */; };
+		8C6A43C61941642900D7D80E /* GRODrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A43C51941642900D7D80E /* GRODrawView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		8C6A43B61941630400D7D80E /* QuartzTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QuartzTests-Info.plist"; sourceTree = "<group>"; };
 		8C6A43B81941630400D7D80E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8C6A43BA1941630400D7D80E /* QuartzTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuartzTests.m; sourceTree = "<group>"; };
+		8C6A43C41941642900D7D80E /* GRODrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GRODrawView.h; path = Quartz/GRODrawView.h; sourceTree = "<group>"; };
+		8C6A43C51941642900D7D80E /* GRODrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GRODrawView.m; path = Quartz/GRODrawView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 		8C6A43831941630400D7D80E = {
 			isa = PBXGroup;
 			children = (
+				8C6A43C41941642900D7D80E /* GRODrawView.h */,
+				8C6A43C51941642900D7D80E /* GRODrawView.m */,
 				8C6A43951941630400D7D80E /* Quartz */,
 				8C6A43B41941630400D7D80E /* QuartzTests */,
 				8C6A438E1941630400D7D80E /* Frameworks */,
@@ -251,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C6A439C1941630400D7D80E /* main.m in Sources */,
+				8C6A43C61941642900D7D80E /* GRODrawView.m in Sources */,
 				8C6A43A01941630400D7D80E /* GROAppDelegate.m in Sources */,
 				8C6A43A61941630400D7D80E /* GROViewController.m in Sources */,
 			);
