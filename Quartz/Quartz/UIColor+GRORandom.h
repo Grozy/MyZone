@@ -1,5 +1,5 @@
 //
-//  GROViewController.h
+//  UIColor+GRORandom.h
 //  Quartz
 //
 //  Created by SunGuozhi on 14-6-6.
@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GRODrawView.h"
-@interface GROViewController : UIViewController
 
+@interface UIColor (GRORandom)
++ (UIColor *)randomColor;
 @end
