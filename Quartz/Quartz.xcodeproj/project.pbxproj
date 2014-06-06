@@ -40,6 +40,7 @@
 		8C2F83BB1941943900C1A0C1 /* UIColor+GRORandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+GRORandom.h"; path = "Quartz/UIColor+GRORandom.h"; sourceTree = "<group>"; };
 		8C2F83BC1941943900C1A0C1 /* UIColor+GRORandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+GRORandom.m"; path = "Quartz/UIColor+GRORandom.m"; sourceTree = "<group>"; };
 		8C2F83BE1941967300C1A0C1 /* github */ = {isa = PBXFileReference; lastKnownFileType = file; name = github; path = Quartz/github; sourceTree = "<group>"; };
+		8C45BF9D19419FB40082F983 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		8C6A438C1941630400D7D80E /* Quartz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quartz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C6A438F1941630400D7D80E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8C6A43911941630400D7D80E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -90,6 +91,7 @@
 		8C6A43831941630400D7D80E = {
 			isa = PBXGroup;
 			children = (
+				8C45BF9D19419FB40082F983 /* Constants.h */,
 				8C2F83BE1941967300C1A0C1 /* github */,
 				8C6A43C41941642900D7D80E /* GRODrawView.h */,
 				8C6A43C51941642900D7D80E /* GRODrawView.m */,

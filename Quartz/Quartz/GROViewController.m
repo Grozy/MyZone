@@ -7,18 +7,17 @@
 //
 
 #import "GROViewController.h"
-
+#import "UIColor+GRORandom.h"
 @interface GROViewController ()
 @property (nonatomic,retain)     GRODrawView * myView;
 @end
 
 @implementation GROViewController
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self.view addSubview:self.myView];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -28,43 +27,44 @@
 }
 
 #pragma mark addUI 
-- (GRODrawView *)myView{
-    if (!_myView) {
-        _myView = [[GRODrawView alloc] initWithFrame:CGRectMake(10, 40, 300, 300)];
-        _myView.backgroundColor = [UIColor lightGrayColor];
+- (IBAction)changeShape:(id)sender {
+    UISegmentedControl * control = sender;
+    [(GRODrawView *)self.view  setShapeType:[control selectedSegmentIndex]];
+    if ([control selectedSegmentIndex] == kImageShape) {
+        _colorControl.hidden = YES;
+    }else{
+        _colorControl.hidden = NO;
     }
-    return _myView;
 }
 
-- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx{
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetLineWidth(context, 4.0);
-    
-    CGContextSetStrokeColorWithColor(context, [UIColor yellowColor].CGColor);
-    CGContextMoveToPoint(context, 10., 10.);
-    CGContextAddLineToPoint(context, 120.f, 120.f);
-    CGContextStrokePath(context);
-    
-    
-    CGContextRef context2 = UIGraphicsGetCurrentContext();
-    
-    CGContextSetStrokeColorWithColor(context2, [UIColor blueColor].CGColor);
-    
-    CGPoint addLines[] =
-    {
-        CGPointMake(10.0, 90.0),
-        CGPointMake(70.0, 60.0),
-        CGPointMake(130.0, 90.0),
-        CGPointMake(190.0, 60.0),
-    };
-    CGContextAddLines(context2, addLines, 5);
-    
-    CGContextStrokePath(context2);
-    
-  
-    
-    
+- (IBAction)changeColor:(id)sender {
+    UISegmentedControl * control = sender;
+    NSInteger index = [control selectedSegmentIndex];
+    GRODrawView * drawView = (GRODrawView *)self.view;
+    switch (index) {
+        case kRedColorTab:
+            drawView.currentColor = [UIColor redColor];
+            drawView.useRandomColor = NO;
+            break;
+        case kBlueColorTab:
+            drawView.currentColor = [UIColor blueColor];
+            drawView.useRandomColor = NO;
+            break;
+            
+        case kYellowColorTab:
+            drawView.currentColor = [UIColor yellowColor];
+            drawView.useRandomColor = NO;
+            break;
+        case kGreenColorTab:
+            drawView.currentColor = [UIColor greenColor];
+            drawView.useRandomColor = NO;
+            break;
+        case kRandomColorTab:
+            drawView.currentColor = [UIColor randomColor];
+            drawView.useRandomColor = YES;
+            break;
+        default:
+            break;
+    }
 }
-
 @end

@@ -7,26 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#ifndef Quartz_GRODrawView_h
-#define Quartz_GRODrawView_h
-
-typedef enum {
-    kLineShape  =   0,
-    kRectShape,
-    kEllipseShape,
-    kImageShape
-}ShapeType;
-typedef enum {
-    kRedColorTab    =   0,
-    kBlueColorTab,
-    kYellowColorTab,
-    kGreenColorTab,
-    kRandomColorTab
-}ColorTabIndex;
-
-#define degreesToRadian(x) (M_PI * (x) /180.f)
-
-@interface GRODrawView : UIView
+#import "Constants.h"
+@interface GRODrawView : UIView//<NSCoding>
 @property (nonatomic) CGPoint firstTouch;
 @property (nonatomic) CGPoint lastTouch;
 @property (nonatomic,retain) UIColor * currentColor;
@@ -34,7 +16,3 @@ typedef enum {
 @property (nonatomic,retain) UIImage * drawImage;
 @property (nonatomic) BOOL useRandomColor;
 @end
-
-
-
-#endif

@@ -9,7 +9,7 @@
 #import "GRODrawView.h"
 #import "UIColor+GRORandom.h"
 @implementation GRODrawView
-
+@synthesize currentColor = _currentColor;
 - (id)initWithCoder:(NSCoder *)aDecoder{
     if (self = [super initWithCoder:aDecoder]) {
         _currentColor = [UIColor redColor];
@@ -20,6 +20,39 @@
 }
 
 - (void)drawRect:(CGRect)rect{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGRect currentRect = CGRectMake(_firstTouch.x, _firstTouch.y, _lastTouch.x - _firstTouch.x, _lastTouch.y - _firstTouch.y);
+    
+    CGContextSetLineWidth(context, 2.f);
+    CGContextSetStrokeColorWithColor(context, _currentColor.CGColor);
+    switch (_shapeType) {
+        case kLineShape:
+            CGContextMoveToPoint(context, _firstTouch.x, _firstTouch.y);
+            CGContextAddLineToPoint(context, _lastTouch.x, _lastTouch.y);
+            CGContextStrokePath(context);
+            break;
+        case kRectShape:
+//            CGContextStrokeRect(context,currentRect);
+            CGContextAddRect(context, currentRect);
+            CGContextDrawPath(context, kCGPathFillStroke);
+            
+            break;
+        case kEllipseShape:
+            CGContextAddEllipseInRect(context, CGRectMake(_firstTouch.x, _firstTouch.y, _lastTouch.x - _firstTouch.x, _lastTouch.y - _firstTouch.y));
+            CGContextDrawPath(context, kCGPathFillStroke);
+            break;
+        case kImageShape:{
+            CGFloat horizontalOffset = _drawImage.size.width / 2;
+            CGFloat verticalOffset = _drawImage.size.height / 2;
+            CGPoint drawPoint = CGPointMake(_lastTouch.x - horizontalOffset, _lastTouch.y -verticalOffset);
+            [_drawImage drawAtPoint:drawPoint];
+            }
+            break;
+        default:
+            break;
+    }
+    /*
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGContextSetLineWidth(context, 4.0);
@@ -52,6 +85,7 @@
     CGContextSetFillColorWithColor(rectRef, [UIColor purpleColor].CGColor);
 
     CGContextStrokePath(rectRef);
+     */
 }
 
 #pragma mark - Touch Handling
@@ -73,7 +107,6 @@
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     UITouch * touch = [touches anyObject];
-    self.backgroundColor = [UIColor randomColor];
     _lastTouch = [touch locationInView:self];
     [self setNeedsDisplay];
 }

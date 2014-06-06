@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GRODrawView.h"
 @interface GROViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UISegmentedControl *colorControl;
+- (IBAction)changeColor:(id)sender;
 
 @end
