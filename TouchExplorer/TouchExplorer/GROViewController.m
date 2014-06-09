@@ -7,7 +7,7 @@
 //
 
 #import "GROViewController.h"
-
+#import "GROSwipesViewController.h"
 @interface GROViewController ()
 
 @end
@@ -54,6 +54,15 @@
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
     self.messageLabel.text = @"Touches Cancelled";
     [self updateLabelsFromTouches:touches];
+}
+
+- (IBAction)gotoNextPage:(id)sender {
+    [self performSegueWithIdentifier:@"swipe" sender:self];
+}
+
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 }
 
 @end

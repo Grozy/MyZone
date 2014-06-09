@@ -12,6 +12,7 @@
 @property (nonatomic,weak) IBOutlet UILabel * messageLabel;
 @property (nonatomic,weak) IBOutlet UILabel * tapsLabel;
 @property (nonatomic,weak) IBOutlet UILabel * touchesLabel;
-
+@property (nonatomic,weak) IBOutlet UIButton * nextPage;
 - (void)updateLabelsFromTouches:(NSSet *)touches;
+
 @end

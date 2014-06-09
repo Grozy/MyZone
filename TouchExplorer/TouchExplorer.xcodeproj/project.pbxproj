@@ -21,6 +21,7 @@
 		8C1EDCAC194568D2004B63FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1EDC8E194568D2004B63FA /* UIKit.framework */; };
 		8C1EDCB4194568D2004B63FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C1EDCB2194568D2004B63FA /* InfoPlist.strings */; };
 		8C1EDCB6194568D2004B63FA /* TouchExplorerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1EDCB5194568D2004B63FA /* TouchExplorerTests.m */; };
+		8C1EDCC1194581AF004B63FA /* GROSwipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1EDCC0194581AF004B63FA /* GROSwipesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		8C1EDCB1194568D2004B63FA /* TouchExplorerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TouchExplorerTests-Info.plist"; sourceTree = "<group>"; };
 		8C1EDCB3194568D2004B63FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8C1EDCB5194568D2004B63FA /* TouchExplorerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchExplorerTests.m; sourceTree = "<group>"; };
+		8C1EDCBF194581AF004B63FA /* GROSwipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GROSwipesViewController.h; sourceTree = "<group>"; };
+		8C1EDCC0194581AF004B63FA /* GROSwipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GROSwipesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				8C1EDCA0194568D2004B63FA /* GROViewController.m */,
 				8C1EDCA2194568D2004B63FA /* Images.xcassets */,
 				8C1EDC91194568D2004B63FA /* Supporting Files */,
+				8C1EDCBF194581AF004B63FA /* GROSwipesViewController.h */,
+				8C1EDCC0194581AF004B63FA /* GROSwipesViewController.m */,
 			);
 			path = TouchExplorer;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 			files = (
 				8C1EDC97194568D2004B63FA /* main.m in Sources */,
 				8C1EDC9B194568D2004B63FA /* GROAppDelegate.m in Sources */,
+				8C1EDCC1194581AF004B63FA /* GROSwipesViewController.m in Sources */,
 				8C1EDCA1194568D2004B63FA /* GROViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +388,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TouchExplorer/TouchExplorer-Prefix.pch";
 				INFOPLIST_FILE = "TouchExplorer/TouchExplorer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -395,6 +402,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TouchExplorer/TouchExplorer-Prefix.pch";
 				INFOPLIST_FILE = "TouchExplorer/TouchExplorer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
