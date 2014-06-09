@@ -22,7 +22,7 @@
 - (void)drawRect:(CGRect)rect{
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGRect currentRect = CGRectMake(_firstTouch.x, _firstTouch.y, _lastTouch.x - _firstTouch.x, _lastTouch.y - _firstTouch.y);
+//    CGRect currentRect = CGRectMake(_firstTouch.x, _firstTouch.y, _lastTouch.x - _firstTouch.x, _lastTouch.y - _firstTouch.y);
     
     CGContextSetLineWidth(context, 2.f);
     CGContextSetStrokeColorWithColor(context, _currentColor.CGColor);
@@ -34,7 +34,7 @@
             break;
         case kRectShape:
 //            CGContextStrokeRect(context,currentRect);
-            CGContextAddRect(context, currentRect);
+            CGContextAddRect(context, self.currentRect);
             CGContextDrawPath(context, kCGPathFillStroke);
             
             break;
@@ -102,12 +102,31 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     UITouch * touch = [touches anyObject];
     _lastTouch = [touch locationInView:self];
-    [self setNeedsDisplay];
+    if (_shapeType == kImageShape) {
+        CGFloat horizontalOffset = _drawImage.size.width / 2;
+        CGFloat verticalOffset = _drawImage.size.height / 2;
+        _redrawRect = CGRectUnion(_redrawRect, CGRectMake(_lastTouch.x - horizontalOffset, _lastTouch.y - verticalOffset, _drawImage.size.width, _drawImage.size.height));
+    }else{
+        _redrawRect = CGRectUnion(_redrawRect, self.currentRect);
+    }
+    _redrawRect = CGRectInset(_redrawRect, -2., -2.);
+    [self setNeedsDisplayInRect:_redrawRect];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     UITouch * touch = [touches anyObject];
     _lastTouch = [touch locationInView:self];
-    [self setNeedsDisplay];
+    if (_shapeType == kImageShape) {
+        CGFloat horizontalOffset = _drawImage.size.width / 2;
+        CGFloat verticalOffset = _drawImage.size.height / 2;
+        _redrawRect = CGRectUnion(_redrawRect, CGRectMake(_lastTouch.x - horizontalOffset, _lastTouch.y - verticalOffset, _drawImage.size.width, _drawImage.size.height));
+    }
+    _redrawRect = CGRectUnion(_redrawRect, self.currentRect);
+    [self setNeedsDisplayInRect:_redrawRect];
+}
+
+#pragma mark - Get Rect -
+- (CGRect)currentRect{
+    return CGRectMake(_firstTouch.x, _firstTouch.y, _lastTouch.x - _firstTouch.x, _lastTouch.y - _firstTouch.y);
 }
 @end
