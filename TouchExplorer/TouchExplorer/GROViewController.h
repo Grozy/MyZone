@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface GROViewController : UIViewController
+@property (nonatomic,weak) IBOutlet UILabel * messageLabel;
+@property (nonatomic,weak) IBOutlet UILabel * tapsLabel;
+@property (nonatomic,weak) IBOutlet UILabel * touchesLabel;
 
+- (void)updateLabelsFromTouches:(NSSet *)touches;
 @end
