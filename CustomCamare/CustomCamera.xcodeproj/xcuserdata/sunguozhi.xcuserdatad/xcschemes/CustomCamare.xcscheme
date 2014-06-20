@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8CD204311952930B00E47E34"
-               BuildableName = "CustomCamare.app"
+               BuildableName = "CustomCamera.app"
                BlueprintName = "CustomCamera"
                ReferencedContainer = "container:CustomCamera.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8CD204521952930B00E47E34"
-               BuildableName = "CustomCamareTests.xctest"
+               BuildableName = "CustomCameraTests.xctest"
                BlueprintName = "CustomCameraTests"
                ReferencedContainer = "container:CustomCamera.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8CD204311952930B00E47E34"
-            BuildableName = "CustomCamare.app"
+            BuildableName = "CustomCamera.app"
             BlueprintName = "CustomCamera"
             ReferencedContainer = "container:CustomCamera.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8CD204311952930B00E47E34"
-            BuildableName = "CustomCamare.app"
+            BuildableName = "CustomCamera.app"
             BlueprintName = "CustomCamera"
             ReferencedContainer = "container:CustomCamera.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8CD204311952930B00E47E34"
-            BuildableName = "CustomCamare.app"
+            BuildableName = "CustomCamera.app"
             BlueprintName = "CustomCamera"
             ReferencedContainer = "container:CustomCamera.xcodeproj">
          </BuildableReference>
